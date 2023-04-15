@@ -13,7 +13,7 @@ function onStartBtnClick() {
     // перший раз щоб колір змінився відразу після натискання кнопки
     body.style.background = getRandomHexColor();
     // наступні рази будуть виконуватися з інтервалом в 1 секунду
-  ChangeColor = setInterval(() => {
+  const changeColor = setInterval(() => {
     body.style.background = getRandomHexColor();
   }, 1000);
 }
@@ -21,7 +21,7 @@ function onStartBtnClick() {
 function onStopBtnClick() {
   stopBtn.disabled = true;
     startBtn.disabled = false;
-    clearInterval(ChangeColor);
+    clearInterval(changeColor);
 }
 
 function getRandomHexColor() {

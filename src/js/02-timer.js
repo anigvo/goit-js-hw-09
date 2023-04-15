@@ -13,18 +13,12 @@ const secondsValue = document.querySelector(`[data-seconds]`);
 
 startBtn.addEventListener(`click`, onStartBtnClick);
 
-// const timer = {
-//     start() {
-//         const startTime = Date.now()
-//     }
-// }
-
 let currentDate = new Date();
 
 function onStartBtnClick() {
   startBtn.disabled = true;
   const selectedDate = new Date(input.value);
-  startChangeTime = setInterval(() => {
+  const test = setInterval(() => {
     currentDate = new Date();
     const convertValues = convertMs(
       selectedDate.getTime() - currentDate.getTime()
