@@ -34,7 +34,6 @@ function onStartBtnClick() {
     hoursValue.innerHTML = `${addLeadingZero(hours)}`;
     MinutesValue.innerHTML = `${addLeadingZero(minutes)}`;
     secondsValue.innerHTML = `${addLeadingZero(seconds)}`;
-      
   }, 1000);
 }
 
