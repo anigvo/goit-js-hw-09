@@ -14,11 +14,11 @@ const secondsValue = document.querySelector(`[data-seconds]`);
 startBtn.addEventListener(`click`, onStartBtnClick);
 
 let currentDate = new Date();
-
+let getInterval = null;
 function onStartBtnClick() {
   startBtn.disabled = true;
   const selectedDate = new Date(input.value);
-  const test = setInterval(() => {
+  getInterval = setInterval(() => {
     currentDate = new Date();
     const convertValues = convertMs(
       selectedDate.getTime() - currentDate.getTime()
@@ -37,7 +37,7 @@ const fp = flatpickr(input, {
   defaultDate: new Date(),
   minuteIncrement: 1,
   onClose(selectedDates) {
-    if (selectedDates[0].getTime() < currentDate.getTime()) {
+    if (selectedDates[0].getTime() <= currentDate.getTime()) {
       Notiflix.Notify.failure('Введіть майбутню дату');
       startBtn.disabled = true;
       return;

@@ -6,14 +6,14 @@ startBtn.addEventListener(`click`, onStartBtnClick);
 stopBtn.addEventListener(`click`, onStopBtnClick);
 
 stopBtn.disabled = true;
-
+let changeColor = null;
 function onStartBtnClick() {
   startBtn.disabled = true;
     stopBtn.disabled = false;
     // перший раз щоб колір змінився відразу після натискання кнопки
     body.style.background = getRandomHexColor();
     // наступні рази будуть виконуватися з інтервалом в 1 секунду
-  const changeColor = setInterval(() => {
+  changeColor = setInterval(() => {
     body.style.background = getRandomHexColor();
   }, 1000);
 }
