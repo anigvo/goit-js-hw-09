@@ -22,12 +22,16 @@ function onStartBtnClick() {
     currentDate = new Date();
     const convertValues = convertMs(
       selectedDate.getTime() - currentDate.getTime()
-      );
+    );
+    if ((selectedDate.getTime() - currentDate.getTime()) > 0) {
       const { days, hours, minutes, seconds } = convertValues;
-    daysValue.innerHTML = `${addLeadingZero(days)}`;
-    hoursValue.innerHTML = `${addLeadingZero(hours)}`;
-    MinutesValue.innerHTML = `${addLeadingZero(minutes)}`;
-    secondsValue.innerHTML = `${addLeadingZero(seconds)}`;
+      daysValue.innerHTML = `${addLeadingZero(days)}`;
+      hoursValue.innerHTML = `${addLeadingZero(hours)}`;
+      MinutesValue.innerHTML = `${addLeadingZero(minutes)}`;
+      secondsValue.innerHTML = `${addLeadingZero(seconds)}`;
+    } else {
+      clearInterval(getInterval)
+    };
   }, 1000);
 }
 
